@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration to Payment Flow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="month"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #004080;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #003060;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function validateRegistration() {
+            const name = document.getElementById("reg-name").value;
+            const email = document.getElementById("reg-email").value;
+            const password = document.getElementById("reg-password").value;
+
+            if (name === "" || email === "" || password === "") {
+                alert("All fields are required!");
+                return false;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Invalid email format!");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long!");
+                return false;
+            }
+            alert("Registration Successful!");
+            showSection('login-section');
+            return false; // Prevent form submission
+        }
+
+        function validateLogin() {
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            if (email === "" || password === "") {
+                alert("Both fields are required!");
+                return false;
+            }
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Invalid email format!");
+                return false;
+            }
+            alert("Login Successful!");
+            showSection('profile-section');
+            return false; // Prevent form submission
+        }
+
+        function validateProfile() {
+            const phone = document.getElementById("profile-phone").value;
+
+            if (phone === "" || isNaN(phone) || phone.length !== 10) {
+                alert("Invalid phone number! It must be 10 digits.");
+                return false;
+            }
+            alert("Profile Saved!");
+            showSection('payment-section');
+            return false; // Prevent form submission
+        }
+
+        function validatePayment() {
+            const cardNumber = document.getElementById("card-number").value;
+            const cvv = document.getElementById("cvv").value;
+            const expiry = document.getElementById("expiry").value;
+
+            if (cardNumber === "" || isNaN(cardNumber) || cardNumber.length !== 16) {
+                alert("Invalid Card Number! It must be 16 digits.");
+                return false;
+            }
+            if (cvv === "" || isNaN(cvv) || cvv.length !== 3) {
+                alert("Invalid CVV! It must be 3 digits.");
+                return false;
+            }
+            if (expiry === "") {
+                alert("Expiry Date is required!");
+                return false;
+            }
+            alert("Payment Successful!");
+            return false; // Prevent form submission
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Registration Section -->
+        <div id="registration-section" class="form-section active">
+            <h2>Registration</h2>
+            <form onsubmit="return validateRegistration();">
+                <input type="text" id="reg-name" placeholder="Name">
+                <input type="email" id="reg-email" placeholder="Email">
+                <input type="password" id="reg-password" placeholder="Password">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Login Section -->
+        <div id="login-section" class="form-section">
+            <h2>Login</h2>
+            <form onsubmit="return validateLogin();">
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profile-section" class="form-section">
+            <h2>Profile</h2>
+            <form onsubmit="return validateProfile();">
+                <input type="text" id="profile-phone" placeholder="Phone Number">
+                <input type="text" id="profile-address" placeholder="Address">
+                <button type="submit">Save Profile</button>
+            </form>
+        </div>
+
+        <!-- Payment Section -->
+        <div id="payment-section" class="form-section">
+            <h2>Payment</h2>
+            <form onsubmit="return validatePayment();">
+                <input type="text" id="card-number" placeholder="Card Number">
+                <input type="text" id="cvv" placeholder="CVV">
+                <input type="month" id="expiry">
+                <button type="submit">Pay</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
