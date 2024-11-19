@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Room Booking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotel Room Booking System</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showSection('register')">Register</a>
+        <a href="#" onclick="showSection('login')">Login</a>
+        <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+    </nav>
+
+    <main>
+        <!-- Registration Section -->
+        <section id="register" class="active">
+            <h2>Register</h2>
+            <form onsubmit="alert('Registration successful!'); return false;">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login">
+            <h2>Login</h2>
+            <form onsubmit="alert('Login successful!'); return false;">
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard">
+            <h2>User Dashboard</h2>
+            <button onclick="showSection('book-room')">Book Room</button>
+            <button onclick="showSection('view-bookings')">View Booking History</button>
+            <button onclick="showSection('check-availability')">Check Room Availability</button>
+            <button onclick="showSection('cancel-booking')">Cancel Booking</button>
+        </section>
+
+        <!-- Book Room Section -->
+        <section id="book-room">
+            <h2>Book a Room</h2>
+            <form onsubmit="alert('Room booked successfully!'); return false;">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="dates">Dates</label>
+                    <input type="date" id="dates" name="dates" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" name="guests" required>
+                </div>
+                <button type="submit">Book Room</button>
+            </form>
+            <button onclick="showSection('dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- View Booking History Section -->
+        <section id="view-bookings">
+            <h2>Booking History</h2>
+            <p>No bookings yet.</p>
+            <button onclick="showSection('dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- Check Room Availability Section -->
+        <section id="check-availability">
+            <h2>Check Room Availability</h2>
+            <form onsubmit="alert('Rooms are available!'); return false;">
+                <div class="form-group">
+                    <label for="availability-destination">Destination</label>
+                    <input type="text" id="availability-destination" name="availability-destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="availability-dates">Dates</label>
+                    <input type="date" id="availability-dates" name="availability-dates" required>
+                </div>
+                <button type="submit">Check Availability</button>
+            </form>
+            <button onclick="showSection('dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- Cancel Booking Section -->
+        <section id="cancel-booking">
+            <h2>Cancel Booking</h2>
+            <form onsubmit="alert('Booking canceled successfully!'); return false;">
+                <div class="form-group">
+                    <label for="booking-id">Booking ID</label>
+                    <input type="text" id="booking-id" name="booking-id" required>
+                </div>
+                <button type="submit">Cancel Booking</button>
+            </form>
+            <button onclick="showSection('dashboard')">Back to Dashboard</button>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
