@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bus Ticket Booking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Online Bus Ticket Booking System</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showSection('register')">Register</a>
+        <a href="#" onclick="showSection('login')">Login</a>
+        <a href="#" onclick="showSection('user-dashboard')">User Dashboard</a>
+        <a href="#" onclick="showSection('admin-dashboard')">Admin Dashboard</a>
+    </nav>
+
+    <main>
+        <!-- Register Section -->
+        <section id="register" class="active">
+            <h2>Register</h2>
+            <form onsubmit="alert('Registration successful!'); return false;">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login">
+            <h2>Login</h2>
+            <form onsubmit="alert('Login successful!'); return false;">
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- User Dashboard Section -->
+        <section id="user-dashboard">
+            <h2>User Dashboard</h2>
+            <button onclick="showSection('book-ticket')">Book a Ticket</button>
+            <button onclick="showSection('view-bookings')">View My Bookings</button>
+            <button onclick="showSection('cancel-booking')">Cancel Booking</button>
+            <button onclick="showSection('comments')">Post Comments</button>
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section id="admin-dashboard">
+            <h2>Admin Dashboard</h2>
+            <button onclick="showSection('add-bus')">Add Bus</button>
+            <button onclick="showSection('update-bus')">Update Bus Information</button>
+            <button onclick="showSection('generate-report')">Generate Report</button>
+        </section>
+
+        <!-- Book Ticket Section -->
+        <section id="book-ticket">
+            <h2>Book a Bus Ticket</h2>
+            <form onsubmit="alert('Ticket booked successfully!'); return false;">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="travel-date">Travel Date</label>
+                    <input type="date" id="travel-date" name="travel-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="seats">Number of Seats</label>
+                    <input type="number" id="seats" name="seats" required>
+                </div>
+                <button type="submit">Book Ticket</button>
+            </form>
+            <button onclick="showSection('user-dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- View Bookings Section -->
+        <section id="view-bookings">
+            <h2>Your Booking History</h2>
+            <p>No bookings yet.</p>
+            <button onclick="showSection('user-dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- Cancel Booking Section -->
+        <section id="cancel-booking">
+            <h2>Cancel Booking</h2>
+            <form onsubmit="alert('Booking canceled successfully!'); return false;">
+                <div class="form-group">
+                    <label for="booking-id">Booking ID</label>
+                    <input type="text" id="booking-id" name="booking-id" required>
+                </div>
+                <button type="submit">Cancel Booking</button>
+            </form>
+            <button onclick="showSection('user-dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- Post Comments Section -->
+        <section id="comments">
+            <h2>Post Comments on Bus</h2>
+            <form onsubmit="alert('Comment posted successfully!'); return false;">
+                <div class="form-group">
+                    <label for="bus-id">Bus ID</label>
+                    <input type="text" id="bus-id" name="bus-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                </div>
+                <button type="submit">Post Comment</button>
+            </form>
+            <button onclick="showSection('user-dashboard')">Back to Dashboard</button>
+        </section>
+
+        <!-- Add Bus Section (Admin) -->
+        <section id="add-bus">
+            <h2>Add Bus</h2>
+            <form onsubmit="alert('Bus added successfully!'); return false;">
+                <div class="form-group">
+                    <label for="bus-type">Bus Type</label>
+                    <input type="text" id="bus-type" name="bus-type" required>
+                </div>
+                <div class="form-group">
+                    <label for="bus-location">Location</label>
+                    <input type="text" id="bus-location" name="bus-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="bus-seats">Available Seats</label>
+                    <input type="number" id="bus-seats" name="bus-seats" required>
+                </div>
+                <button type="submit">Add Bus</button>
+            </form>
+            <button onclick="showSection('admin-dashboard')">Back to Admin Dashboard</button>
+        </section>
+
+        <!-- Update Bus Section (Admin) -->
+        <section id="update-bus">
+            <h2>Update Bus Information</h2>
+            <form onsubmit="alert('Bus updated successfully!'); return false;">
+                <div class="form-group">
+                    <label for="bus-id">Bus ID</label>
+                    <input type="text" id="bus-id" name="bus-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="updated-seats">Updated Seats</label>
+                    <input type="number" id="updated-seats" name="updated-seats" required>
+                </div>
+                <button type="submit">Update Bus</button>
+            </form>
+            <button onclick="showSection('admin-dashboard')">Back to Admin Dashboard</button>
+        </section>
+
+        <!-- Generate Report Section (Admin) -->
+        <section id="generate-report">
+            <h2>Generate Report</h2>
+            <form onsubmit="alert('Report generated successfully!'); return false;">
+                <div class="form-group">
+                    <label for="report-type">Report Type</label>
+                    <select id="report-type" name="report-type">
+                        <option value="bus-schedule">Bus Schedule</option>
+                        <option value="user-booking">User Booking History</option>
+                    </select>
+                </div>
+                <button type="submit">Generate Report</button>
+            </form>
+            <button onclick="showSection('admin-dashboard')">Back to Admin Dashboard</button>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
