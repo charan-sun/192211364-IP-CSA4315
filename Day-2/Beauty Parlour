@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Parlour Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff66b2;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-item {
+            display: inline-block;
+            width: 30%;
+            padding: 15px;
+            text-align: center;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .service-item h3 {
+            margin-top: 10px;
+        }
+        .service-item p {
+            color: #555;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select, input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff66b2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #e55b97;
+        }
+        .profile {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .profile div {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Beauty Parlour Appointment Booking</h1>
+</header>
+
+<nav>
+    <a href="#login" onclick="showLogin()">Login</a>
+    <a href="#services" onclick="showServices()">Services</a>
+    <a href="#profile" onclick="showProfile()">My Profile</a>
+    <a href="#admin" onclick="showAdmin()">Admin</a>
+</nav>
+
+<!-- Login Form -->
+<div class="form-container" id="login" style="display: none;">
+    <h2>Login</h2>
+    <form onsubmit="return validateLogin()">
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+    <p id="error-message" style="color: red;"></p>
+</div>
+
+<!-- Services Catalog -->
+<div class="container" id="services" style="display: none;">
+    <h2>Beauty Services</h2>
+    <div class="service-item">
+        <img src="https://via.placeholder.com/300x200.png?text=Hair+Cutting" alt="Hair Cutting">
+        <h3>Hair Cutting</h3>
+        <p>$30.00</p>
+        <button onclick="bookService('Hair Cutting')">Book Now</button>
+    </div>
+    <div class="service-item">
+        <img src="https://via.placeholder.com/300x200.png?text=Facial+Treatment" alt="Facial Treatment">
+        <h3>Facial Treatment</h3>
+        <p>$50.00</p>
+        <button onclick="bookService('Facial Treatment')">Book Now</button>
+    </div>
+    <div class="service-item">
+        <img src="https://via.placeholder.com/300x200.png?text=Manicure+Pedicure" alt="Manicure Pedicure">
+        <h3>Manicure Pedicure</h3>
+        <p>$25.00</p>
+        <button onclick="bookService('Manicure Pedicure')">Book Now</button>
+    </div>
+</div>
+
+<!-- Appointment Form -->
+<div class="form-container" id="appointment" style="display: none;">
+    <h2>Book Appointment</h2>
+    <form onsubmit="return bookAppointment()">
+        <select id="service">
+            <option value="Hair Cutting">Hair Cutting</option>
+            <option value="Facial Treatment">Facial Treatment</option>
+            <option value="Manicure Pedicure">Manicure Pedicure</option>
+        </select><br>
+        <select id="stylist">
+            <option value="Stylist A">Stylist A</option>
+            <option value="Stylist B">Stylist B</option>
+            <option value="Stylist C">Stylist C</option>
+        </select><br>
+        <input type="date" id="date" required><br>
+        <input type="time" id="time" required><br>
+        <button type="submit">Confirm Appointment</button>
+    </form>
+</div>
+
+<!-- User Profile -->
+<div class="container" id="profile" style="display: none;">
+    <h2>My Profile</h2>
+    <div class="profile">
+        <div>
+            <h3>Personal Information</h3>
+            <p><strong>Email:</strong> sukumar@example.com</p>
+            <p><strong>Phone:</strong> 123-456-7890</p>
+        </div>
+        <div>
+            <h3>My Appointments</h3>
+            <p><strong>Service:</strong> Hair Cutting</p>
+            <p><strong>Date:</strong> 2024-12-01</p>
+            <p><strong>Time:</strong> 10:00 AM</p>
+            <button>Cancel Appointment</button>
+        </div>
+    </div>
+</div>
+
+<!-- Admin Panel -->
+<div class="form-container" id="admin" style="display: none;">
+    <h2>Admin Panel</h2>
+    <h3>Add New Service</h3>
+    <form>
+        <input type="text" placeholder="Service Name" required><br>
+        <input type="text" placeholder="Price" required><br>
+        <input type="text" placeholder="Description" required><br>
+        <button>Add Service</button>
+    </form>
+</div>
+
+<script>
+    let isLoggedIn = false;
+    let userEmail = 'sukumar@example.com';  // Example user email
+    let userPassword = '1234';              // Updated password
+
+    function showLogin() {
+        document.getElementById('login').style.display = 'block';
+        document.getElementById('services').style.display = 'none';
+        document.getElementById('profile').style.display = 'none';
+        document.getElementById('admin').style.display = 'none';
+    }
+
+    function showServices() {
+        if (isLoggedIn) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('services').style.display = 'block';
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('admin').style.display = 'none';
+        } else {
+            alert("Please login to view services.");
+        }
+    }
+
+    function showProfile() {
+        if (isLoggedIn) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('services').style.display = 'none';
+            document.getElementById('profile').style.display = 'block';
+            document.getElementById('admin').style.display = 'none';
+        } else {
+            alert("Please login to view your profile.");
+        }
+    }
+
+    function showAdmin() {
+        if (isLoggedIn) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('services').style.display = 'none';
+            document.getElementById('profile').style.display = 'none';
+            document.getElementById('admin').style.display = 'block';
+        } else {
+            alert("Please login as admin.");
+        }
+    }
+
+    function validateLogin() {
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+
+        if (email === userEmail && password === userPassword) {
+            isLoggedIn = true;
+            showServices();  // Go to services if login successful
+            return false;  // Prevent form submission
+        } else {
+            document.getElementById('error-message').textContent = 'Invalid email or password.';
+            return false;
+        }
+    }
+
+    function bookService(serviceName) {
+        alert(`You have selected the ${serviceName} service.`);
+        document.getElementById('appointment').style.display = 'block';
+    }
+
+    function bookAppointment() {
+        let service = document.getElementById('service').value;
+        let stylist = document.getElementById('stylist').value;
+        let date = document.getElementById('date').value;
+        let time = document.getElementById('time').value;
+
+        alert(`Your appointment for ${service} with ${stylist} is booked on ${date} at ${time}.`);
+        return false;
+    }
+</script>
+
+</body>
+</html>
