@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Flight Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light gray background for the whole page */
+        }
+        header {
+            background-color: #005f73; /* Dark teal header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        section {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        section.active {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #008CBA; /* Bright blue button */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #006F8E;
+        }
+        .section-header {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content-container {
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .blue-section {
+            background-color: #e0f7fa; /* Light cyan background for blue section */
+        }
+        .green-section {
+            background-color: #e8f5e9; /* Light green background for green section */
+        }
+        .yellow-section {
+            background-color: #fffde7; /* Light yellow background for yellow section */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Online Flight Reservation System</h1>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showSection('admin-login')">Admin Login</a>
+        <a href="#" onclick="showSection('forgot-password')">Forgot Password</a>
+        <a href="#" onclick="showSection('search-flight')">Search Flight</a>
+        <a href="#" onclick="showSection('book-ticket')">Book Ticket</a>
+        <a href="#" onclick="showSection('my-tickets')">My Tickets</a>
+        <a href="#" onclick="showSection('cancel-ticket')">Cancel Ticket</a>
+    </nav>
+
+    <main>
+        <!-- Admin Login Section -->
+        <section id="admin-login" class="active">
+            <h2 class="section-header">Admin Login</h2>
+            <div class="content-container blue-section">
+                <form onsubmit="alert('Admin Login Successful'); return false;">
+                    <div class="form-group">
+                        <label for="admin-username">Username</label>
+                        <input type="text" id="admin-username" name="admin-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" name="admin-password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Forgot Password Section -->
+        <section id="forgot-password">
+            <h2 class="section-header">Forgot Password</h2>
+            <div class="content-container yellow-section">
+                <form onsubmit="alert('Password Reset Link Sent'); return false;">
+                    <div class="form-group">
+                        <label for="email">Enter Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button type="submit">Send Reset Link</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Search Flight Section -->
+        <section id="search-flight">
+            <h2 class="section-header">Search Flight</h2>
+            <div class="content-container green-section">
+                <form onsubmit="alert('Flight Search Results'); return false;">
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" name="destination" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departure-date">Departure Date</label>
+                        <input type="date" id="departure-date" name="departure-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="class-type">Class</label>
+                        <select id="class-type" name="class-type">
+                            <option value="economy">Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first">First</option>
+                        </select>
+                    </div>
+                    <button type="submit">Search Flights</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Book Ticket Section -->
+        <section id="book-ticket">
+            <h2 class="section-header">Book Ticket</h2>
+            <div class="content-container blue-section">
+                <form onsubmit="alert('Ticket Booked Successfully'); return false;">
+                    <div class="form-group">
+                        <label for="flight-id">Flight ID</label>
+                        <input type="text" id="flight-id" name="flight-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="num-passengers">Number of Passengers</label>
+                        <input type="number" id="num-passengers" name="num-passengers" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seat-selection">Seat Selection</label>
+                        <select id="seat-selection" name="seat-selection">
+                            <option value="window">Window</option>
+                            <option value="aisle">Aisle</option>
+                            <option value="middle">Middle</option>
+                        </select>
+                    </div>
+                    <button type="submit">Book Now</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- My Tickets Section -->
+        <section id="my-tickets">
+            <h2 class="section-header">My Tickets</h2>
+            <div class="content-container yellow-section">
+                <p>No tickets booked yet.</p>
+                <button onclick="showSection('book-ticket')">Book a Ticket</button>
+            </div>
+        </section>
+
+        <!-- Cancel Ticket Section -->
+        <section id="cancel-ticket">
+            <h2 class="section-header">Cancel Ticket</h2>
+            <div class="content-container green-section">
+                <form onsubmit="alert('Ticket Canceled Successfully'); return false;">
+                    <div class="form-group">
+                        <label for="ticket-id">Ticket ID</label>
+                        <input type="text" id="ticket-id" name="ticket-id" required>
+                    </div>
+                    <button type="submit">Cancel Ticket</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Admin Report Section -->
+        <section id="admin-report">
+            <h2 class="section-header">Admin Report</h2>
+            <div class="content-container blue-section">
+                <form onsubmit="alert('Report Generated'); return false;">
+                    <div class="form-group">
+                        <label for="report-type">Select Report Type</label>
+                        <select id="report-type" name="report-type">
+                            <option value="flight-schedule">Flight Schedule</option>
+                            <option value="user-bookings">User Bookings</option>
+                            <option value="ticket-sales">Ticket Sales</option>
+                        </select>
+                    </div>
+                    <button type="submit">Generate Report</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Print Ticket Section -->
+        <section id="print-ticket">
+            <h2 class="section-header">Print Ticket</h2>
+            <div class="content-container yellow-section">
+                <form onsubmit="alert('Ticket Ready for Printing'); return false;">
+                    <div class="form-group">
+                        <label for="ticket-id-print">Enter Ticket ID</label>
+                        <input type="text" id="ticket-id-print" name="ticket-id-print" required>
+                    </div>
+                    <button type="submit">Print Ticket</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
