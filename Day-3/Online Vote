@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteOnline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        form input, form button {
+            width: calc(100% - 2rem);
+            margin: 1rem 1rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .candidate-list {
+            margin: 1rem;
+        }
+        .candidate {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>VoteOnline</h1>
+    <p>Secure and Accessible E-Voting Platform</p>
+</header>
+
+<div class="container" id="loginPage">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<div class="container hidden" id="infoPage">
+    <h2>Election Information</h2>
+    <p>Welcome to the 2024 General Elections! Below is the list of candidates:</p>
+    <ul>
+        <li><strong>Candidate A:</strong> Promises to improve healthcare and education.</li>
+        <li><strong>Candidate B:</strong> Focuses on infrastructure and economic growth.</li>
+        <li><strong>Candidate C:</strong> Advocates for renewable energy and environment.</li>
+    </ul>
+    <button id="proceedToVote">Proceed to Cast Your Vote</button>
+</div>
+
+<div class="container hidden" id="votePage">
+    <h2>Cast Your Vote</h2>
+    <form id="voteForm">
+        <div class="candidate-list">
+            <div class="candidate">
+                <label>
+                    <input type="radio" name="candidate" value="Candidate A" required>
+                    Vote for Candidate A
+                </label>
+            </div>
+            <div class="candidate">
+                <label>
+                    <input type="radio" name="candidate" value="Candidate B" required>
+                    Vote for Candidate B
+                </label>
+            </div>
+            <div class="candidate">
+                <label>
+                    <input type="radio" name="candidate" value="Candidate C" required>
+                    Vote for Candidate C
+                </label>
+            </div>
+        </div>
+        <button type="submit">Submit Vote</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 VoteOnline. All Rights Reserved.</p>
+</footer>
+
+<script>
+    const loginPage = document.getElementById('loginPage');
+    const infoPage = document.getElementById('infoPage');
+    const votePage = document.getElementById('votePage');
+
+    const loginForm = document.getElementById('loginForm');
+    const proceedToVote = document.getElementById('proceedToVote');
+    const voteForm = document.getElementById('voteForm');
+
+    const VALID_USERNAME = "sukumar";
+    const VALID_PASSWORD = "1234";
+
+    // Handle login
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+            alert("Login successful!");
+            loginPage.classList.add('hidden');
+            infoPage.classList.remove('hidden');
+        } else {
+            alert("Invalid username or password. Try again.");
+        }
+    });
+
+    // Proceed to vote
+    proceedToVote.addEventListener('click', function() {
+        infoPage.classList.add('hidden');
+        votePage.classList.remove('hidden');
+    });
+
+    // Handle vote submission
+    voteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const selectedCandidate = document.querySelector('input[name="candidate"]:checked').value;
+        alert(`Your vote for ${selectedCandidate} has been submitted successfully!`);
+        votePage.classList.add('hidden');
+        loginPage.classList.remove('hidden'); // Reset to login for next user
+    });
+</script>
+
+</body>
+</html>
