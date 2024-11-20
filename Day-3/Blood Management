@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Management Information System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        header {
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+        form input, form button {
+            width: calc(100% - 2rem);
+            margin: 0.5rem 1rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+        form button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #c9302c;
+        }
+        footer {
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Blood Management Information System</h1>
+    <p>Efficient Management of Donor Records and Medical Reports</p>
+</header>
+
+<div class="container">
+    <h2>Donor Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Donor ID</th>
+                <th>Name</th>
+                <th>Blood Group</th>
+                <th>Contact</th>
+                <th>Location</th>
+                <th>Last Donation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>O+</td>
+                <td>+1234567890</td>
+                <td>New York</td>
+                <td>2024-01-15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>A-</td>
+                <td>+9876543210</td>
+                <td>Los Angeles</td>
+                <td>2024-02-10</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Robert Brown</td>
+                <td>B+</td>
+                <td>+1122334455</td>
+                <td>Chicago</td>
+                <td>2023-12-20</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Generate Reports</h2>
+    <form>
+        <input type="date" placeholder="Start Date" required>
+        <input type="date" placeholder="End Date" required>
+        <button type="submit">Generate Report</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Add New Donor</h2>
+    <form>
+        <input type="text" placeholder="Donor Name" required>
+        <input type="text" placeholder="Blood Group (e.g., O+, A-)" required>
+        <input type="text" placeholder="Contact Number" required>
+        <input type="text" placeholder="Location" required>
+        <input type="date" placeholder="Last Donation Date" required>
+        <button type="submit">Add Donor</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Blood Management Information System. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
