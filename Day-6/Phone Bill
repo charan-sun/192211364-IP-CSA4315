@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Bill Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            float: left;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+        }
+        .form-control {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .button {
+            background-color: #333;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .details {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Phone Bill Payment</h1>
+        <p>Manage Your Phone Bills Effortlessly</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" onclick="showSection('login')">Login</a>
+        <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+        <a href="#" onclick="showSection('payment')">Make Payment</a>
+        <a href="#" onclick="showSection('notifications')">Notifications</a>
+    </nav>
+
+    <!-- Login Page -->
+    <section id="login">
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); showSection('dashboard');">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+            
+            <button type="submit" class="button">Login</button>
+        </form>
+    </section>
+
+    <!-- Dashboard Page -->
+    <section id="dashboard" class="hidden">
+        <h2>Your Dashboard</h2>
+        <div class="container">
+            <div class="details">
+                <h3>Current Bill Details</h3>
+                <p><strong>Bill Amount:</strong> $75.50</p>
+                <p><strong>Due Date:</strong> December 5, 2024</p>
+                <p><strong>Outstanding Amount:</strong> $45.50</p>
+                <p><strong>Previous Payments:</strong></p>
+                <ul>
+                    <li>October 2024: $60.00</li>
+                    <li>September 2024: $55.00</li>
+                </ul>
+            </div>
+            <button class="button" onclick="showSection('payment')">Make a Payment</button>
+        </div>
+    </section>
+
+    <!-- Payment Page -->
+    <section id="payment" class="hidden">
+        <h2>Payment</h2>
+        <div class="container">
+            <h3>Select Payment Method</h3>
+            <form onsubmit="event.preventDefault(); showSection('confirmation');">
+                <label for="payment-amount">Amount to Pay</label>
+                <input type="number" id="payment-amount" name="payment-amount" class="form-control" value="45.50" required>
+
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment-method" class="form-control" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="net-banking">Net Banking</option>
+                    <option value="digital-wallet">Digital Wallet</option>
+                </select>
+
+                <button type="submit" class="button">Pay Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Confirmation Page -->
+    <section id="confirmation" class="hidden">
+        <h2>Payment Successful</h2>
+        <p>Your payment of $45.50 has been successfully processed.</p>
+        <p>A receipt has been sent to your email.</p>
+        <button class="button" onclick="showSection('dashboard')">Go to Dashboard</button>
+    </section>
+
+    <!-- Notifications Page -->
+    <section id="notifications" class="hidden">
+        <h2>Set Up Notifications</h2>
+        <form>
+            <label for="email-notifications">Enable Email Notifications</label>
+            <input type="checkbox" id="email-notifications" name="email-notifications">
+            <label for="sms-notifications">Enable SMS Notifications</label>
+            <input type="checkbox" id="sms-notifications" name="sms-notifications">
+            
+            <button type="submit" class="button">Save Preferences</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Phone Bill Payment. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.classList.add('hidden');
+            });
+
+            // Show the requested section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
