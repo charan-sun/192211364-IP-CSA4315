@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveetha School of Engineering</title>
+    <style>
+        /* Paragraph default styling */
+        #collegePara {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: black;
+            line-height: 1.5;
+        }
+
+        /* Styling for highlighted words */
+        .highlight {
+            font-weight: bold;
+            color: red;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #005599;
+        }
+    </style>
+</head>
+<body>
+
+<h1>About Saveetha School of Engineering</h1>
+
+<!-- Paragraph with bold words wrapped in <span> -->
+<p id="collegePara">
+    Saveetha School of Engineering (SSE) Chennai, is a <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">private institution</span>, approved by <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">AICTE</span>, established in 2005, located in the Chennai city of Tamil Nadu state. It is accredited <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">NAAC ‘A’ Grade</span> and got recognition by <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">43rd rank</span> in NIRF. SSE is one of the <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">80 universities</span> around the globe which get the <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">IET-UK Accreditation</span>. 
+    The college promises for being one of the <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">best engineering colleges in India</span> by keeping high standards of <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">quality education</span> in engineering fields. Under Saveetha School of Engineering Admissions, the college offers some full-time <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">Undergraduate</span>, <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">Postgraduate</span>, and <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">Doctoral programs</span> in many departments. Each department is enriched with <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">experienced, dedicated</span>, and <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">knowledgeable faculty members</span>. With <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">extraordinary infrastructure facilities</span> and with <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">innovative teaching methods</span> like MILA, Flipped Classes, etc., SSE provides the best platform for the students to <span onmouseover="highlightWord(this)" onmouseout="unhighlightWord(this)">excel in their academics</span>.
+</p>
+
+<!-- Button to trigger style change -->
+<button onclick="changeParagraphStyle()">Change</button>
+
+<script>
+    // Function to change the paragraph style
+    function changeParagraphStyle() {
+        const para = document.getElementById('collegePara');
+        para.style.fontFamily = 'Georgia, serif';
+        para.style.fontSize = '18px';
+        para.style.color = 'blue';
+    }
+
+    // Function to highlight a word on mouseover
+    function highlightWord(element) {
+        element.classList.add('highlight');
+    }
+
+    // Function to remove highlight on mouseout
+    function unhighlightWord(element) {
+        element.classList.remove('highlight');
+    }
+</script>
+
+</body>
+</html>
