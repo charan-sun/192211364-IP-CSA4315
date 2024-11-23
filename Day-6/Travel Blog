@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Adventures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            float: left;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-content {
+            width: 70%;
+        }
+        .sidebar {
+            width: 28%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .blog-post {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .comment-section {
+            margin-top: 20px;
+        }
+        .comment-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .comment-box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .comment-box textarea {
+            width: 100%;
+            padding: 10px;
+        }
+        .social-buttons a {
+            text-decoration: none;
+            padding: 10px;
+            margin-right: 10px;
+            background-color: #3b5998;
+            color: white;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .map-container {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Travel Adventures</h1>
+        <p>Join me as I explore the world!</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#travel-guides">Travel Guides</a>
+        <a href="#food-experiences">Food Experiences</a>
+        <a href="#cultural-insights">Cultural Insights</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+    </nav>
+
+    <!-- Homepage Content -->
+    <section id="home">
+        <h2>Latest Blog Posts</h2>
+        <div class="container">
+            <!-- Main Content (Blog Posts) -->
+            <div class="main-content">
+                <div class="blog-post">
+                    <h3>Exploring the Wonders of Italy</h3>
+                    <img src="italy.jpg" alt="Italy">
+                    <p>Join me as I explore the rich culture, delicious food, and beautiful landscapes of Italy. From the canals of Venice to the historic ruins of Rome...</p>
+                    <a href="#full-post">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <h3>A Culinary Adventure in Thailand</h3>
+                    <img src="thailand.jpg" alt="Thailand">
+                    <p>In this post, I dive into the world of Thai cuisine, exploring the spices, flavors, and street food that make this country a culinary paradise...</p>
+                    <a href="#full-post">Read More</a>
+                </div>
+                <!-- More blog posts can be added similarly -->
+            </div>
+
+            <!-- Sidebar (Social Sharing & Map) -->
+            <div class="sidebar">
+                <h3>Share this Blog:</h3>
+                <div class="social-buttons">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+
+                <h3>My Travel Map</h3>
+                <div class="map-container">
+                    <!-- Embedded Map (use an actual map service like Google Maps) -->
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1ZTgGcWtpRKHwHmyFxJ4VqX2XIn-Cyyc&ehbc=2E312F" width="100%" height="250"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section id="destinations">
+        <h2>Destinations</h2>
+        <p>Explore my travel adventures to beautiful and exotic destinations around the globe.</p>
+        <!-- Add content about various destinations -->
+    </section>
+
+    <section id="travel-guides">
+        <h2>Travel Guides</h2>
+        <p>Helpful tips, itineraries, and resources for your next adventure.</p>
+        <!-- Add content for travel guides -->
+    </section>
+
+    <section id="food-experiences">
+        <h2>Food Experiences</h2>
+        <p>Discover the best food I’ve tasted around the world, from street food to fine dining.</p>
+        <!-- Add content for food experiences -->
+    </section>
+
+    <section id="cultural-insights">
+        <h2>Cultural Insights</h2>
+        <p>Learn about the diverse cultures, traditions, and customs I’ve encountered on my travels.</p>
+        <!-- Add content for cultural insights -->
+    </section>
+
+    <!-- About Page -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm [Your Name], a travel enthusiast who loves exploring new places, learning about different cultures, and sharing my adventures with the world. Join me as I document my travels!</p>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <h2>Resources</h2>
+        <p>Here are some useful tools and recommendations to help you plan your next trip:</p>
+        <ul>
+            <li><a href="#">Packing List</a></li>
+            <li><a href="#">Flight Booking</a></li>
+            <li><a href="#">Hotel Booking</a></li>
+        </ul>
+    </section>
+
+    <!-- Comment Section -->
+    <section id="comments">
+        <h2>Comments</h2>
+        <div class="comment-section">
+            <div class="comment-box">
+                <input type="text" placeholder="Your Name">
+                <textarea placeholder="Write a comment..."></textarea>
+                <button>Submit Comment</button>
+            </div>
+            <div class="comments-list">
+                <p><strong>John Doe:</strong> This is amazing! I would love to visit Italy one day.</p>
+                <p><strong>Jane Smith:</strong> The food in Thailand is incredible. Can't wait for your next post!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Adventures. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
