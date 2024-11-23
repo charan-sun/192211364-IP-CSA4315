@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnWell Tuition Centre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>LearnWell Tuition Centre</h1>
+        <nav>
+            <ul>
+                <li><a href="#announcements">Announcements</a></li>
+                <li><a href="#courses">Course Offerings</a></li>
+                <li><a href="#registration">Online Registration</a></li>
+                <li><a href="#maintenance">Maintenance Requests</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Announcements Section -->
+    <section id="announcements">
+        <h2>Announcements</h2>
+        <div class="announcement">
+            <h3>Class Schedule Update</h3>
+            <p>Classes will be rescheduled for the upcoming holiday. Please check your email for updated timings.</p>
+        </div>
+        <div class="announcement">
+            <h3>Special Event: Science Fair</h3>
+            <p>Join us for the Science Fair on December 15th. Registration is open!</p>
+        </div>
+    </section>
+
+    <!-- Course Offerings Section -->
+    <section id="courses">
+        <h2>Course Offerings</h2>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Schedule</th>
+                <th>Fees</th>
+            </tr>
+            <tr>
+                <td>Mathematics</td>
+                <td>Mon-Wed 10:00 AM - 12:00 PM</td>
+                <td>$200/month</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>Tue-Thu 1:00 PM - 3:00 PM</td>
+                <td>$180/month</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Online Registration Section -->
+    <section id="registration">
+        <h2>Online Registration</h2>
+        <form action="/submit-registration" method="POST">
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="course">Select Course:</label>
+            <select id="course" name="course">
+                <option value="mathematics">Mathematics</option>
+                <option value="english">English</option>
+            </select><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <!-- Maintenance Requests Section -->
+    <section id="maintenance">
+        <h2>Maintenance Requests</h2>
+        <form action="/submit-maintenance" method="POST">
+            <label for="issue">Describe the issue:</label>
+            <textarea id="issue" name="issue" required></textarea><br>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>LearnWell Tuition Centre is dedicated to providing quality education in a supportive environment. Our experienced teachers are committed to helping students achieve their academic goals.</p>
+        <h3>Meet Our Teachers</h3>
+        <ul>
+            <li>John Doe - Math Instructor</li>
+            <li>Jane Smith - English Instructor</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out to us.</p>
+        <p>Email: info@learnwell.com</p>
+        <p>Phone: 123-456-7890</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 LearnWell Tuition Centre</p>
+    </footer>
+
+</body>
+</html>
