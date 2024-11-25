@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHaven - Your Online Bookstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #1a252f;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to BookHaven</h1>
+    <p>Your one-stop shop for all things books</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#categories">Categories</a>
+    <a href="#blog">Blog</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<div class="container">
+    <section id="home">
+        <h2>Home</h2>
+        <p>Explore our curated collections of bestsellers, new arrivals, and top-rated books. Dive into a world of stories and knowledge.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At BookHaven, our mission is to bring readers closer to the books they love. We value quality, diversity, and accessibility in literature.</p>
+    </section>
+
+    <section id="categories">
+        <h2>Categories</h2>
+        <p>Browse books by:</p>
+        <ul>
+            <li><strong>Genre:</strong> Fiction, Non-Fiction, Fantasy, Mystery, Romance, and more.</li>
+            <li><strong>Author:</strong> Discover works by your favorite authors.</li>
+            <li><strong>Publication Date:</strong> Find the latest releases or timeless classics.</li>
+        </ul>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Check out our latest posts for book recommendations, reviews, and exclusive author interviews.</p>
+        <a href="#" class="btn">Read Our Blog</a>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ</h2>
+        <p>Have questions? Find answers about orders, shipping, returns, and more in our FAQ section.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Reach out for any inquiries or support.</p>
+        <ul>
+            <li>Email: support@bookhaven.com</li>
+            <li>Phone: +1-800-BOOKS</li>
+            <li>Address: 123 Book Street, Read City, Fictionland</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 BookHaven. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
