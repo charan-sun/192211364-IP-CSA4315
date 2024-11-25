@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentRide - Vehicle Rentals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .vehicle-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .vehicle-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .vehicle-card h3 {
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to RentRide</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Browse Vehicles</a>
+    <a href="#">My Dashboard</a>
+    <a href="#">Contact Us</a>
+</nav>
+
+<div class="container">
+    <section id="search">
+        <h2>Find Your Rental Vehicle</h2>
+        <form>
+            <div class="form-group">
+                <label for="vehicle-type">Vehicle Type</label>
+                <select id="vehicle-type">
+                    <option value="">Select Vehicle Type</option>
+                    <option value="car">Car</option>
+                    <option value="truck">Truck</option>
+                    <option value="suv">SUV</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter pickup location">
+            </div>
+
+            <div class="form-group">
+                <label for="rental-duration">Rental Duration (days)</label>
+                <input type="number" id="rental-duration" placeholder="Enter duration">
+            </div>
+
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </section>
+
+    <section id="vehicle-list">
+        <h2>Available Vehicles</h2>
+
+        <div class="vehicle-card">
+            <img src="car.jpg" alt="Car">
+            <h3>Compact Car</h3>
+            <p>Price: $50/day</p>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+
+        <div class="vehicle-card">
+            <img src="suv.jpg" alt="SUV">
+            <h3>Luxury SUV</h3>
+            <p>Price: $80/day</p>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+
+        <div class="vehicle-card">
+            <img src="truck.jpg" alt="Truck">
+            <h3>Pickup Truck</h3>
+            <p>Price: $70/day</p>
+            <a href="#" class="btn">Book Now</a>
+        </div>
+    </section>
+</div>
+
+<footer style="background-color: #f4f4f4; padding: 10px; text-align: center;">
+    <p>&copy; 2024 RentRide. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
