@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ko-Matha Dairy Farm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffaf0; /* Light beige background color */
+        }
+        header {
+            background-color: #2E8B57; /* Sea green */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #2E8B57;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #2E8B57;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2E8B57;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #1c5b3e;
+        }
+        footer {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Ko-Matha Dairy Farm</h1>
+    <p>Connecting You with Wholesome Dairy Products</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#order">Order Online</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<div class="container">
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to Ko-Matha Dairy Farm! We are committed to providing high-quality dairy products sourced from Indian A1 cow holders, ensuring purity and health benefits for our customers.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Ko-Matha Dairy Farm has a rich history of delivering premium dairy products. Our values lie in promoting sustainable farming practices and delivering superior-quality A1 cow milk and its by-products.</p>
+    </section>
+
+    <section id="products">
+        <h2>Products</h2>
+        <ul>
+            <li><strong>Fresh Milk:</strong> Pure and healthy milk straight from A1 cows.</li>
+            <li><strong>Curd:</strong> Thick and creamy curd made using traditional methods.</li>
+            <li><strong>Cova-Sweet:</strong> Deliciously rich and sweet traditional dessert.</li>
+            <li><strong>Butter:</strong> Freshly churned butter with a smooth texture.</li>
+            <li><strong>Ghee:</strong> Pure, aromatic ghee made from the best milk.</li>
+        </ul>
+    </section>
+
+    <section id="order">
+        <h2>Order Online</h2>
+        <p>Conveniently schedule your delivery and enjoy our fresh products at your doorstep.</p>
+        <a href="#" class="btn">Place Your Order</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries and support, please reach out to us through the following channels:</p>
+        <ul>
+            <li>Email: support@komathadairy.com</li>
+            <li>Phone: +91-9876543210</li>
+            <li>Address: 123 Dairy Farm Lane, Village Green, India</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Ko-Matha Dairy Farm. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
