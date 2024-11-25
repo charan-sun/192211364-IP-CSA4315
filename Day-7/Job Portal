@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light blue background color */
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .job-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+        }
+        .job-card h3 {
+            margin: 10px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the Job Portal</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Browse Jobs</a>
+    <a href="#">My Dashboard</a>
+    <a href="#">Contact Us</a>
+</nav>
+
+<div class="container">
+    <section id="search">
+        <h2>Search for Jobs</h2>
+        <form>
+            <div class="form-group">
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" placeholder="Enter job title">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter location">
+            </div>
+
+            <div class="form-group">
+                <label for="job-type">Job Type</label>
+                <select id="job-type">
+                    <option value="">Select Job Type</option>
+                    <option value="full-time">Full-Time</option>
+                    <option value="part-time">Part-Time</option>
+                    <option value="contract">Contract</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </section>
+
+    <section id="job-list">
+        <h2>Available Vacancies</h2>
+
+        <div class="job-card">
+            <h3>Software Engineer</h3>
+            <p>Location: New York</p>
+            <p>Type: Full-Time</p>
+            <a href="#" class="btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <h3>Marketing Specialist</h3>
+            <p>Location: San Francisco</p>
+            <p>Type: Part-Time</p>
+            <a href="#" class="btn">Apply Now</a>
+        </div>
+
+        <div class="job-card">
+            <h3>Data Analyst</h3>
+            <p>Location: Chicago</p>
+            <p>Type: Contract</p>
+            <a href="#" class="btn">Apply Now</a>
+        </div>
+    </section>
+</div>
+
+<footer style="background-color: #f4f4f4; padding: 10px; text-align: center;">
+    <p>&copy; 2024 Job Portal. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
